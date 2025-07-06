@@ -5,65 +5,105 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dev ❤️ Her - Our Story</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #ffe6e6, #ffffff);
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #fff);
       color: #333;
       padding: 2rem;
-      max-width: 600px;
+      max-width: 700px;
       margin: auto;
+      position: relative;
+      overflow-x: hidden;
     }
-    .story {
-      display: none;
+
+    h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      text-align: center;
+      color: #d63384;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      color: #c2185b;
+      font-weight: 500;
       margin-top: 1.5rem;
     }
+
+    .story {
+      display: none;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
     .visible {
       display: block;
     }
+
     .choice {
       display: block;
       margin: 1rem 0;
-      padding: 0.8rem 1rem;
-      background-color: #ffb6c1;
+      padding: 0.9rem 1.2rem;
+      background-color: #f06292;
+      color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      transition: background 0.3s ease;
     }
-    h2, h3 {
-      color: #cc3366;
+
+    .choice:hover {
+      background-color: #d81b60;
     }
+
     .music-note {
-      background: #ffe0ec;
+      background: #fce4ec;
       border-radius: 12px;
       padding: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       text-align: center;
       font-style: italic;
+      animation: fadeIn 1s ease-in-out;
     }
+
+    .spotify-player-container {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      z-index: 999;
+      animation: slideUp 1s ease-out;
+    }
+
     iframe.spotify-player {
       width: 100%;
       height: 80px;
       border-radius: 12px;
       border: none;
     }
-    .player-container {
-      position: fixed;
-      bottom: 10px;
-      left: 10px;
-      right: 10px;
-      z-index: 999;
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      0% { transform: translateY(100px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
 <body>
+
   <div class="music-note">
-    🎧 For the best experience, wear headphones and hit play on our playlist below.  
-    Feel free to pause or play whenever you like — the music is just for you, Her 💕
+    🎧 Our playlist is just a little background love — click below to play full tracks in the Spotify app!<br />
+    <a href="https://open.spotify.com/playlist/37i9dQZF1EJzGXIkg71A8v" target="_blank">Open Full Playlist in Spotify</a>
   </div>
 
   <h2>Dev ❤️ Her</h2>
+
   <div id="story0" class="story visible">
     <h3>How it all started...</h3>
     <p>Deborathi met Anushka on Bumble on May 6th. A spark was instant. On May 13th, she gave him her Instagram... and the rest is a beautiful journey waiting to unfold.</p>
@@ -121,14 +161,19 @@
     <p>Love,<br>Dev</p>
   </div>
 
-  <div class="player-container">
-    <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/0bC096dDrNjGSibmlrbXs9?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <div class="spotify-player-container">
+    <iframe class="spotify-player"
+      src="https://open.spotify.com/embed/playlist/37i9dQZF1EJzGXIkg71A8v?utm_source=generator&theme=0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
   </div>
 
   <script>
     function next(id) {
       document.querySelectorAll('.story').forEach(el => el.classList.remove('visible'));
-      document.getElementById(id).classList.add('visible');
+      const nextEl = document.getElementById(id);
+      if (nextEl) nextEl.classList.add('visible');
     }
   </script>
 </body>
