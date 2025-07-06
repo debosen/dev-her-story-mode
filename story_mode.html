@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev ❤️ Her - Our Story</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe6e6, #ffffff);
+      color: #333;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .story {
+      display: none;
+      margin-top: 1.5rem;
+    }
+    .visible {
+      display: block;
+    }
+    .choice {
+      display: block;
+      margin: 1rem 0;
+      padding: 0.8rem 1rem;
+      background-color: #ffb6c1;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    h2, h3 {
+      color: #cc3366;
+    }
+    .music-note {
+      background: #ffe0ec;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-style: italic;
+    }
+    iframe.spotify-player {
+      width: 100%;
+      height: 80px;
+      border-radius: 12px;
+      border: none;
+    }
+    .player-container {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <div class="music-note">
+    🎧 For the best experience, wear headphones and hit play on our playlist below.  
+    Feel free to pause or play whenever you like — the music is just for you, Her 💕
+  </div>
+
+  <h2>Dev ❤️ Her</h2>
+  <div id="story0" class="story visible">
+    <h3>How it all started...</h3>
+    <p>Deborathi met Anushka on Bumble on May 6th. A spark was instant. On May 13th, she gave him her Instagram... and the rest is a beautiful journey waiting to unfold.</p>
+    <button class="choice" onclick="next('story1')">Begin Our Story</button>
+  </div>
+
+  <div id="story1" class="story">
+    <h3>The First Date Dream 💭</h3>
+    <p>When we meet for the first time, what would be your perfect first date?</p>
+    <button class="choice" onclick="next('sidewalk')">Go to a cozy sidewalk café ☕</button>
+    <button class="choice" onclick="next('movie')">Movie date & street food 🍿🌮</button>
+  </div>
+
+  <div id="sidewalk" class="story">
+    <h3>Sidewalk Café Date</h3>
+    <p>We laugh over iced coffees, talk for hours, and end up shopping aimlessly, holding hands. It’s like a rom-com 💕</p>
+    <button class="choice" onclick="next('story2')">Next</button>
+  </div>
+
+  <div id="movie" class="story">
+    <h3>Movie & Momo Night</h3>
+    <p>You lean on my shoulder during the film, and later we walk under fairy lights sharing momos and dreams. Perfect.</p>
+    <button class="choice" onclick="next('story2')">Next</button>
+  </div>
+
+  <div id="story2" class="story">
+    <h3>What’s Next?</h3>
+    <p>After a few perfect dates, what do you want next in our journey?</p>
+    <button class="choice" onclick="next('trip')">Plan a trip together ✈️</button>
+    <button class="choice" onclick="next('stayin')">A stay-in Netflix and pizza night 🍕</button>
+  </div>
+
+  <div id="trip" class="story">
+    <h3>Adventure Awaits</h3>
+    <p>We take a spontaneous trip to the hills, take silly photos, and watch the sunrise together. Memories for life.</p>
+    <button class="choice" onclick="next('story3')">Continue</button>
+  </div>
+
+  <div id="stayin" class="story">
+    <h3>Cozy Days</h3>
+    <p>We order too much food, argue over which show to binge, and fall asleep on the couch. Home isn’t a place—it's you.</p>
+    <button class="choice" onclick="next('story3')">Continue</button>
+  </div>
+
+  <div id="story3" class="story">
+    <h3>The Promise 💍</h3>
+    <p>As time passes, our love only grows. We talk about dreams, careers, home, dogs, and a little family.</p>
+    <p><strong>Dev says:</strong> “I love you the most in this world and I’ll do everything to make you smile every single day.”</p>
+    <button class="choice" onclick="next('end')">Finish</button>
+  </div>
+
+  <div id="end" class="story">
+    <h3>Always & Forever</h3>
+    <p>No matter what you chose in this story, just know: I choose you. Every single time. You are my person, my home, my future. ❤️</p>
+    <p>Love,<br>Dev</p>
+  </div>
+
+  <div class="player-container">
+    <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/37i9dQZF1EJzGXIkg71A8v?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+
+  <script>
+    function next(id) {
+      document.querySelectorAll('.story').forEach(el => el.classList.remove('visible'));
+      document.getElementById(id).classList.add('visible');
+    }
+  </script>
+</body>
+</html>
