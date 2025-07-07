@@ -89,25 +89,138 @@
   </style>
 </head>
 <body>
-  <div class="music-note">
-    🎧 Want full vibes? Click to play our playlist in Spotify and let the love flow: 
-    <a href="https://open.spotify.com/playlist/37i9dQZF1EJzGXIkg71A8v" target="_blank">Dev & Her Spotify Blend</a>
-  </div>
-  <h2>Dev and Anushka's Story</h2>
-  <!-- Story content continues... (see earlier content) -->
-  <div class="spotify-player-container">
-    <iframe class="spotify-player"
-      src="https://open.spotify.com/embed/playlist/37i9dQZF1EJzGXIkg71A8v?utm_source=generator&theme=0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy">
-    </iframe>
-  </div>
-  <script>
-    function next(id) {
-      document.querySelectorAll('.story').forEach(el => el.classList.remove('visible'));
-      const nextEl = document.getElementById(id);
-      if (nextEl) nextEl.classList.add('visible');
-    }
-  </script>
+
+<div class="music-note">
+  🎧 Want full vibes? Click to play our playlist in Spotify and let the love flow: 
+  <a href="https://open.spotify.com/playlist/37i9dQZF1EJzGXIkg71A8v" target="_blank">Dev & Her Spotify Blend</a>
+</div>
+
+<h2>Dev and Anushka's Story</h2>
+
+<div id="story0" class="story visible">
+  <h3>Chapter 1: The Bumble Spark ✨</h3>
+  <p>May 6th, a swipe changed everything. We matched. We smiled. And then... it began.</p>
+  <button class="choice" onclick="next('story1')">Continue</button>
+</div>
+
+<div id="story1" class="story">
+  <h3>Chapter 2: Instagram & Butterflies</h3>
+  <p>On May 13th, she gave him her Instagram. The chats got deeper, the emojis more flirty, and the vibe—undeniable.</p>
+  <p>What did you feel when we started talking?</p>
+  <button class="choice" onclick="next('story2a')">A spark I couldn’t explain</button>
+  <button class="choice" onclick="next('story2b')">Like I knew you already</button>
+  <button class="choice" onclick="next('story2c')">Pure excitement</button>
+</div>
+
+<div id="story2a" class="story">
+  <h3>The Unspoken Click</h3>
+  <p>That kind of connection—rare. You knew from the start this was something more.</p>
+  <button class="choice" onclick="next('story3')">Next</button>
+</div>
+<div id="story2b" class="story">
+  <h3>Kindred Spirits</h3>
+  <p>Maybe we met in a past life. Or maybe souls just recognize their people. You felt it, too.</p>
+  <button class="choice" onclick="next('story3')">Next</button>
+</div>
+<div id="story2c" class="story">
+  <h3>Excited Heartbeats</h3>
+  <p>Your heart raced every time her name popped up. Those butterflies? 100% real.</p>
+  <button class="choice" onclick="next('story3')">Next</button>
+</div>
+
+<div id="story3" class="story">
+  <h3>Chapter 3: Dream Date 💭</h3>
+  <p>If you could plan the perfect first date, what would it be?</p>
+  <button class="choice" onclick="next('cafe')">Cozy sidewalk café & bookstore ☕📚</button>
+  <button class="choice" onclick="next('movie')">Movie date & momo night 🍿🥟</button>
+  <button class="choice" onclick="next('drive')">Long drive & shared playlists 🚗🎶</button>
+</div>
+
+<div id="cafe" class="story">
+  <h3>Aesthetic & Affection</h3>
+  <p>We spend hours in a cozy nook, laughing over lattes and picking books for each other.</p>
+  <button class="choice" onclick="next('story4')">Continue</button>
+</div>
+<div id="movie" class="story">
+  <h3>Cinema & Cuddles</h3>
+  <p>A shared popcorn tub, secret glances in the dark, and walking under fairy lights with street food in hand.</p>
+  <button class="choice" onclick="next('story4')">Continue</button>
+</div>
+<div id="drive" class="story">
+  <h3>Wheels & Whispers</h3>
+  <p>Endless roads. Our favorite songs. Your head on my shoulder. No destination—just us.</p>
+  <button class="choice" onclick="next('story4')">Continue</button>
+</div>
+
+<div id="story4" class="story">
+  <h3>Chapter 4: Love Languages 💌</h3>
+  <p>What makes you feel most loved?</p>
+  <button class="choice" onclick="next('touch')">Warm cuddles & kisses 🫂</button>
+  <button class="choice" onclick="next('words')">Long messages & late-night talks ✍️</button>
+  <button class="choice" onclick="next('gifts')">Thoughtful surprises 🎁</button>
+  <button class="choice" onclick="next('time')">Quality time together ⏳</button>
+</div>
+
+<div id="touch" class="story">
+  <p>You just want to be held like the world pauses when we touch. And honestly, same.</p>
+  <button class="choice" onclick="next('story5')">Next</button>
+</div>
+<div id="words" class="story">
+  <p>Your heart opens with honesty. Every “I miss you” message stays bookmarked forever in your soul.</p>
+  <button class="choice" onclick="next('story5')">Next</button>
+</div>
+<div id="gifts" class="story">
+  <p>You notice the little things—and love when someone does the same. Even a post-it with "I love you" melts you.</p>
+  <button class="choice" onclick="next('story5')">Next</button>
+</div>
+<div id="time" class="story">
+  <p>Presence over presents. Whether it’s 3 a.m. chats or sleepy mornings, you want time over everything.</p>
+  <button class="choice" onclick="next('story5')">Next</button>
+</div>
+
+<div id="story5" class="story">
+  <h3>Chapter 5: Future Memories 🌈</h3>
+  <p>Where do we go from here?</p>
+  <button class="choice" onclick="next('honeymoon')">Plan a dreamy honeymoon ✈️</button>
+  <button class="choice" onclick="next('pets')">Pick our future pet 🐶🐱</button>
+  <button class="choice" onclick="next('home')">Build our home vision 🏡</button>
+</div>
+
+<div id="honeymoon" class="story">
+  <p>Paris at sunset? Iceland under the auroras? Or Himachal in snow? Wherever it is, it’ll be ours.</p>
+  <button class="choice" onclick="next('end')">Final Chapter</button>
+</div>
+<div id="pets" class="story">
+  <p>Meet Mocha (our cat) and Oreo (our dog). They fight over belly rubs and sleep between us.</p>
+  <button class="choice" onclick="next('end')">Final Chapter</button>
+</div>
+<div id="home" class="story">
+  <p>Bookshelves, warm lights, Spotify always on, a balcony for chai — our little love-filled nest.</p>
+  <button class="choice" onclick="next('end')">Final Chapter</button>
+</div>
+
+<div id="end" class="story">
+  <h3>Final Chapter: Always & Forever</h3>
+  <p>Years from now, we’ll reread this. Smile. Laugh. Kiss.</p>
+  <p>Because this story? It’s ours. And it’s only just begun.</p>
+  <p>Love always,<br>Dev 💗</p>
+</div>
+
+<div class="spotify-player-container">
+  <iframe class="spotify-player"
+    src="https://open.spotify.com/embed/playlist/37i9dQZF1EJzGXIkg71A8v?utm_source=generator&theme=0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
+</div>
+
+<script>
+  function next(id) {
+    document.querySelectorAll('.story').forEach(el => el.classList.remove('visible'));
+    const nextEl = document.getElementById(id);
+    if (nextEl) nextEl.classList.add('visible');
+  }
+</script>
+
 </body>
 </html>
